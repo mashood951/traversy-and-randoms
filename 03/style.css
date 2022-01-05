@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --transition-time: 700ms;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #222222;
+  background-color: #333333;
+  overflow-x: hidden;
+}
+
+.article {
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+  transform-origin: top left;
+  transition: rotate var(--transition-time);
+}
+
+.article .container {
+  width: 85%;
+  margin: 100px 0;
+}
+
+.article h5 {
+  color: #6C6C6C;
+  font-style: italic;
+}
+
+.article h3 {
+  margin: 1rem 0;
+}
+
+.article p {
+  color: #333333;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+.article img {
+  width: 100%;
+}
+
+.hamburger-container {
+  position: fixed;
+  background-color: #FF7979;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+  transition: rotate var(--transition-time);
+  z-index: 1;
+}
+
+.hamburger-container > div {
+  position: absolute;
+  cursor: pointer;
+}
+
+.hamburger-container .hamburger {
+  width: 23px;
+  height: 20px;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.hamburger-container .close {
+  bottom: 55px;
+  left: 35px;
+  rotate: 45deg;
+}
+
+.close .bar {
+  width: 25px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.close .bar:first-child {
+  rotate: 90deg;
+}
+
+.close .bar:nth-child(2) {
+  transform: translateY(-100%);
+}
+
+nav {
+  position: fixed;
+  bottom: 80px;
+  margin-left: 1.2rem;
+  color: white;
+  z-index: -1;
+}
+
+nav ul {
+  height: 9rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav ul li {
+  transform: translateX(-100%);
+  transition: transform var(--transition-time);
+}
+
+nav ul li + li {
+  transform: translateX(-150%);
+  margin-left: 1rem;
+}
+
+nav ul li + li + li {
+  transform: translateX(-200%);
+  margin-left: 2rem;
+}
+
+
+nav ul li i {
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
